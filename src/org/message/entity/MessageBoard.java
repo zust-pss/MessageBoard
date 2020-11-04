@@ -3,6 +3,7 @@ package org.message.entity;
 import java.util.Date;
 
 public class MessageBoard {
+    private int messageID;
     private int id;
     private String name;
     private Date time;
@@ -11,6 +12,14 @@ public class MessageBoard {
 
     public int getId() {
         return id;
+    }
+
+    public int getMessageID() {
+        return messageID;
+    }
+
+    public void setMessageID(int messageID) {
+        this.messageID = messageID;
     }
 
     public void setId(int id) {
@@ -58,6 +67,15 @@ public class MessageBoard {
     }
 
     public MessageBoard() {
+    }
+
+    public MessageBoard(int messageID, int id, String name, Date time, String title, String message) {
+        this.messageID = messageID;
+        this.id = id;
+        this.name = name;
+        this.time = time;
+        this.title = title;
+        this.message = message;
     }
 
     @Override

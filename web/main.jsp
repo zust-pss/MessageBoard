@@ -49,19 +49,21 @@
     <a style="margin-left:150px" href="LogoutServlet">退出登陆</a>
     <a style="margin-left:220px" href="MyselfServlet">个人中心</a><br/>
     <%
-        if(boardPage.getCurrentPage() != 1){
+        if(boardPage.getTotalPage() != 0){
+            if(boardPage.getCurrentPage() != 1){
     %>
     <a href = "/QueryMessageByPageServlet?currentPage=1">首页</a>
     <a href = "/QueryMessageByPageServlet?currentPage=<%=boardPage.getCurrentPage() - 1%>">上一页</a>
     <%
-        }
+            }
     %>
     <%
-        if(boardPage.getCurrentPage() != boardPage.getTotalPage()){
+            if(boardPage.getCurrentPage() != boardPage.getTotalPage()){
     %>
     <a href = "/QueryMessageByPageServlet?currentPage=<%=boardPage.getCurrentPage() + 1%>">下一页</a>
     <a href = "/QueryMessageByPageServlet?currentPage=<%=boardPage.getTotalPage()%>">尾页</a>
     <%
+            }
         }
     %>
     <br/>

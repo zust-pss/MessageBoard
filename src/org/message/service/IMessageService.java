@@ -9,4 +9,6 @@ public interface IMessageService {
     public ArrayList<MessageBoard> findAllMessage() ;
     public int getTotalCount();
     public ArrayList<MessageBoard> queryStudentByPage(int currentPage, int pageSize);
+    public void DeleteMessage(int id);
+    public ArrayList<MessageBoard> findMessagesById(int id);
 }

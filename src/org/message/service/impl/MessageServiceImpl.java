@@ -21,4 +21,13 @@ public class MessageServiceImpl implements IMessageService {
     public ArrayList<MessageBoard> queryStudentByPage(int currentPage, int pageSize) {
         return messageDao.queryMessageByPage(currentPage, pageSize);
     }
+    public void DeleteMessage(int id){
+        messageDao.DeleteMessage(id);
+    }
+
+    @Override
+    public ArrayList<MessageBoard> findMessagesById(int id) {
+        IMessageDao messageDao = new MessageDaoImpl();
+        return messageDao.findAllMyMessage(id);
+    }
 }

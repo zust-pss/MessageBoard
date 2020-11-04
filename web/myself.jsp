@@ -26,19 +26,23 @@
             <%
                 SimpleDateFormat sdf = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
                 ArrayList<MessageBoard> al;
-                al= (ArrayList)request.getAttribute("myMessages");
+                al= (ArrayList<MessageBoard>)request.getAttribute("myMessages");
                 if(al!=null){
                     Iterator iter=al.iterator();
                     while(iter.hasNext()){
                         MessageBoard messBoar=(MessageBoard) iter.next();
             %>
-            <tr><td><%= new LoginDaoImpl().getNameById(messBoar.getId()) %></td>
+            <tr>
+                <td><%= new LoginDaoImpl().getNameById(messBoar.getId()) %></td>
                 <td><%= sdf.format(messBoar.getTime()) %></td>
                 <td><%= messBoar.getTitle() %></td>
-                <td><%= messBoar.getMessage() %></td></tr>
+                <td><%= messBoar.getMessage() %></td>
+                <td><a href="DeleteMessageServlet?messageID=<%=messBoar.getMessageID()%>">删除</a></td>
+            </tr>
             <%
                     }
                 }
+
             %>
         </table>
     </form>

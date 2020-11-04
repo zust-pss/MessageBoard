@@ -9,4 +9,6 @@ public interface IMessageDao {
     public boolean addMessage(MessageBoard messageBoard);
     public ArrayList<MessageBoard> findAllMessage();
     public ArrayList<MessageBoard> queryMessageByPage(int currentPage,int pageSize);
+    public ArrayList<MessageBoard> findAllMyMessage(int id);
+    public void DeleteMessage(int id);
 }
